@@ -1,0 +1,101 @@
+.hamburger {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: none;
+    transition: 500ms;
+
+
+    @media(max-width: $showRWDNavigation) {
+        display: block;
+
+    }
+}
+
+
+.menu-open {
+    .menu {
+        transform: translateX(0);
+        // transition: 500ms;
+
+    }
+
+}
+
+@media(max-width: $showRWDNavigation) {
+    .menu-open {
+        .menu {
+            transform: translateX(0);
+
+        }
+    }
+}
+
+
+.menu {
+    background-color: $navigationColor;
+    position: fixed;
+    width: 290px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-right: 1px solid $menuBorderColor;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    z-index: 15;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: 500ms;
+
+    @media(max-width: $showRWDNavigation) {
+        transform: translateX(-290px);
+    }
+
+
+    .logo {
+        margin: 0 0 130px 0;
+    }
+
+    .nav-list {
+        @include resetList;
+        margin: 0 0 40px 0;
+
+        li {
+            margin: 0 0 24px 0;
+
+
+            &:last-child {
+                margin: 0;
+            }
+
+            a {
+                color: $navFontsColor;
+                font-weight: 700;
+                transition: 300ms;
+
+                i {
+                    color: $iconColor;
+                    margin: 0 20px 0 0;
+                }
+
+                &:hover {
+                    color: $navFontHoverColor;
+                }
+            }
+
+        }
+
+
+
+    }
+
+    .copyright {
+        margin-top: auto;
+        margin-bottom: 0;
+        font-size: 14px;
+        color: $navCopyrightColor;
+    }
+}

@@ -1,0 +1,73 @@
+.services {
+    padding: 80px 0;
+
+    @include for-tablet {
+        padding: 40px 0;
+    }
+
+    .service-clouds {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+
+        .cloud {
+
+            padding: 0 15px;
+            border-radius: 20px;
+            width: calc(100%/3);
+            text-align: center;
+            // position: relative;
+            transition: 500ms;
+
+            @include for-mobile {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .cloud-content {
+                padding: 30px 15px 15px 15px;
+                border-radius: 20px;
+
+                &.blue {
+                    color: $servicesFontColorLight;
+                    background: $servicesCloudBlue;
+                    box-shadow: $servicesShadowBlue;
+
+                }
+
+                &.yellow {
+                    background-color: $servicesCloudYellow;
+                    color: $servicesFontColorDark;
+                    box-shadow: $servicesShadowYellow;
+                }
+
+                &.red {
+                    background-color: $servicesCloudRed;
+                    color: $servicesFontColorLight;
+                    box-shadow: $servicesShadowRed;
+                }
+            }
+
+            &:hover {
+                transform: translateY(-15px);
+            }
+        }
+
+
+    }
+
+    .go-contact {
+        text-align: center;
+        margin: 45px 0 0 0;
+
+        a {
+            color: $globalLinkColor;
+
+            &:hover {
+                color: $globalHoverLinkColor;
+                text-decoration: none;
+            }
+        }
+    }
+}

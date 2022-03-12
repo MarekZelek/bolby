@@ -1,0 +1,145 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: $bodyBgColor;
+    color: $mainFontColor;
+    font-family: $mainFontFamily;
+    overflow-x: hidden;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+@media (max-width: $showRWDNavigation) {
+    .menu-open {
+
+        .menu {
+            transform: translateX(290px);
+            transition: 500ms;
+
+        }
+
+        main section {
+            transform: translateX(290px);
+            transition: 500ms;
+
+            // OVERLAY
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(16, 16, 25, 0.7);
+                top: 0;
+                left: 0;
+                z-index: 50;
+            }
+        }
+
+        .hamburger {
+            transform: translateX(290px);
+        }
+    }
+}
+
+.menu-open {
+
+    .menu-open {
+        .menu {
+            transform: translateX(290px);
+            transition: 500ms;
+
+        }
+
+        main section {
+            transform: translateX(290px);
+            transition: 500ms;
+
+            // OVERLAY
+            &::before {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(16, 16, 25, 0.7);
+                top: 0;
+                left: 0;
+                z-index: 50;
+            }
+        }
+
+        .hamburger {
+            transform: translateX(290px);
+            transition: 500ms;
+        }
+    }
+
+}
+
+main {
+    padding: 0 0 0 290px;
+
+    section {
+        transition: 500ms;
+    }
+
+
+
+    @media (max-width: $showRWDNavigation) {
+        padding: 0;
+
+    }
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: $formPlaceholderColor;
+}
+
+a {
+    text-decoration: none;
+    transition: 300ms;
+    // transition: all 0.5s ease-out;
+
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 23px;
+    color: $mainHeaderColor;
+    line-height: 1.2;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 15px;
+    margin: 0 auto;
+
+}
+
+.global-header {
+
+
+    @include for-tablet {
+        margin: 0 0 30px 0;
+    }
+
+    @include fluid-type-container(26px, 36px);
+    color: $mainHeaderColor;
+    margin: 0 0 60px 0;
+    position: relative;
+
+
+    &::after {
+        content: '';
+        width: 37px;
+        height: 37px;
+        display: block;
+        background-image: url('../img/dots-bg.svg');
+        position: absolute;
+        top: -15px;
+        left: 0;
+    }
+}

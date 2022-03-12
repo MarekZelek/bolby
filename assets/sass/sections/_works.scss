@@ -1,0 +1,31 @@
+.works {
+    padding: 80px 0;
+
+    @include for-tablet {
+        padding: 40px 0;
+    }
+
+    .portfolio-list {
+        @include resetList;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 25px;
+
+        li {
+            margin: 0 25px 0 0;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 700;
+            position: relative;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            &:hover {
+                color: $worksLinkHoverColor;
+            }
+        }
+
+    }
+}

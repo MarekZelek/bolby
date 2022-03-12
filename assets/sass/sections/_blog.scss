@@ -1,0 +1,113 @@
+.blog {
+    padding: 80px 0;
+
+    @include for-tablet {
+        padding: 40px 0;
+    }
+
+    .blog-clouds {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+
+        .cloud {
+            padding: 0 15px;
+            border-radius: 20px;
+            width: calc(100%/3);
+            // position: relative;
+            transition: 500ms;
+
+            @include for-mobile {
+                width: 100%;
+                padding: 15px;
+            }
+
+
+            .cloud-content {
+                // padding: 15px;
+                border-radius: 20px;
+                background-color: $blogCloudBgColor;
+                box-shadow: $blogShadow;
+
+                .thumbs {
+                    position: relative;
+                    overflow: hidden;
+
+                    .badge {
+                        position: absolute;
+                        top: 0;
+                        left: 20px;
+                        background-color: $blogBadgeBgColor;
+                        color: $blogBadgeFontColor;
+                        border-radius: 0 0 15px 15px;
+                        font-size: 14px;
+                        padding: 2px 8px;
+                        z-index: 1;
+                    }
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        transition: 300ms;
+
+                        &:hover {
+                            transform: scale(1.1);
+                        }
+                    }
+                }
+            }
+
+            .details {
+                padding: 20px;
+
+                .title {
+                    font-size: 20px;
+                    margin: 0;
+
+                    a {
+                        text-decoration: underline;
+                        color: $blogLinkFontColor;
+
+                        &:hover {
+                            color: $blogLinkHoverColor;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                ul {
+                    font-size: 14px;
+                    color: $blogListFontColor;
+                    padding: 0;
+
+                    li {
+                        display: inline-block;
+
+                        &:first-child::after {
+                            content: "";
+                            background: $blogListFontColor;
+                            border-radius: 50%;
+                            display: inline-block;
+                            height: 3px;
+                            margin-left: 0.6rem;
+                            margin-right: 0.6rem;
+                            vertical-align: middle;
+                            width: 3px;
+                        }
+                    }
+                }
+
+            }
+
+            &:hover {
+                transform: translateY(-20px);
+            }
+
+        }
+
+
+
+    }
+
+
+}

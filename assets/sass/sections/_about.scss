@@ -1,0 +1,199 @@
+.about {
+    padding: 80px 0;
+
+    @include for-tablet {
+        padding: 40px 0;
+    }
+
+    .about-box {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+        padding-bottom: 45px;
+
+        .foto {
+            width: 25%;
+            padding: 0 15px;
+
+            @include for-tablet {
+                width: 100%;
+                text-align: center;
+                margin: 0 0 40px 0;
+            }
+        }
+
+        .cloud {
+
+            width: 75%;
+            padding: 0 15px;
+
+            @include for-tablet {
+                width: 100%;
+            }
+
+            .bg {
+                padding: 30px 15px;
+                background-color: $aboutCloudBgColor;
+                box-shadow: 0 5px 20px 0 rgba(69, 69, 96, 0.1);
+                border-radius: 20px;
+                position: relative;
+                display: flex;
+                flex-wrap: wrap;
+
+                &::before {
+                    content: '';
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 15px 15px 15px 0;
+                    border-color: transparent #fff transparent transparent;
+                    position: absolute;
+                    left: -15px;
+                    top: 20%;
+                }
+
+                @include for-tablet {
+                    &::before {
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 15px 15px 15px 0;
+                        border-color: transparent #fff transparent transparent;
+                        position: absolute;
+                        left: 50%;
+                        top: -22.5px;
+                        transform: rotate(90deg);
+
+                    }
+                }
+
+
+                .desc {
+                    width: 50%;
+                    padding: 0 15px;
+
+                    @include for-mobile {
+                        width: 100%;
+                    }
+
+                    p {
+                        margin: 0;
+                        line-height: 1.7;
+                        text-align: justify;
+                    }
+
+                    .button {
+                        padding: 30px 0;
+                    }
+                }
+
+                .skills {
+
+                    width: 50%;
+                    padding: 0 15px;
+
+                    @include for-mobile {
+                        width: 100%;
+                    }
+
+                    .skill-name {
+                        display: flex;
+                        justify-content: space-between;
+                        margin: 0 0 20px 0;
+
+                        .name {
+                            font-weight: 500;
+                        }
+
+                        .percent {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .progress {
+                        height: 7px;
+                        border-radius: 15px;
+                        background-color: $progressBgColor;
+                        margin: 0 0 15px 0;
+
+                        .bar {
+                            display: block;
+                            height: 7px;
+                            border-radius: 15px;
+
+                            &.yellow {
+                                background-color: $progressBarYellow;
+                            }
+
+                            &.red {
+                                background-color: $progressBarRed;
+                            }
+
+                            &.blue {
+                                background-color: $progressBarBlue;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+
+    }
+
+    .info-box {
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: space-between;
+        // background-color: $blogBadgeBgColor;
+        margin: 0 -15px;
+
+        .info-box-details {
+            width: 25%;
+            padding: 0 15px;
+            // position: relative;
+
+            @include for-tablet {
+                width: 50%;
+            }
+
+            @include for-mobile {
+                width: 100%;
+            }
+
+            .icon-badge {
+                float: left;
+                height: 100%;
+
+                &::before {
+                    content: "\f06d";
+                    display: inline-block;
+                    text-rendering: auto;
+                    -webkit-font-smoothing: antialiased;
+                    font: var(--fa-font-solid);
+                    font-size: 36px;
+                    color: #FF4C60;
+                    width: 40px;
+                    height: 40px;
+
+                    position: relative;
+                    left: 0;
+                    top: 15px;
+                    z-index: 99;
+                    text-align: center;
+                    line-height: 40px;
+
+                }
+            }
+
+            .details-desc {
+                margin-left: 60px;
+            }
+
+        }
+
+
+
+    }
+}

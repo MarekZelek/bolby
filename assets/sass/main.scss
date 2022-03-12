@@ -1,0 +1,18 @@
+@import "variables";
+@import "mixins";
+@import "plugins/normalize";
+@import "plugins/hamburgers/hamburgers";
+@import "global";
+@import "components/menu";
+@import "sections/home";
+@import "sections/about";
+@import "sections/services";
+@import "sections/experience";
+@import "sections/works";
+@import "sections/prices";
+@import "components/button";
+@import "animations/scrollAnimation";
+@import "animations/buttonAnimation";
+
+@import "sections/blog";
+@import "sections/contact";

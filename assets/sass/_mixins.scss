@@ -1,0 +1,90 @@
+@mixin resetList {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+@mixin fluid-type-container($min-value, $max-value) {
+    $min-vw: 320px;
+    $max-vw: 1140px;
+    $factor: 1 / ($max-vw - $min-vw) * ($max-value - $min-value);
+    $calc-value: unquote("#{ $min-value - ($min-vw * $factor) } + #{ 100vw * $factor }");
+
+    font-size: $min-value; // Fallback for older browsers
+    font-size: clamp(#{ if($min-value > $max-value, $max-value, $min-value) }, #{ $calc-value }, #{ if($min-value > $max-value, $min-value, $max-value) });
+}
+
+
+@mixin timeline {
+    height: 87%;
+    border: 1px solid #FF4C60;
+    color: #FF4C60;
+    position: absolute;
+    top: 50px;
+    left: 46px;
+    z-index: 1;
+}
+
+@mixin timeline-icons {
+    display: inline-block;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font: var(--fa-font-solid);
+    font-size: 24px;
+    color: #FF4C60;
+    width: 40px;
+    height: 40px;
+    background-color: $experienceIconsColor;
+    position: absolute;
+    left: 12.5px;
+    top: 30px;
+    z-index: 2;
+    text-align: center;
+    line-height: 40px;
+}
+
+@mixin form-input-style {
+    display: block;
+    width: 100%;
+    height: 60px;
+    outline: none;
+    padding: 10px 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: $ContactFormFontColor;
+    border: 1px solid transparent;
+    // border: 1px solid $contactFormInputBorder;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px 0 rgba(69, 69, 96, 0.1);
+}
+
+@mixin form-textarea-style {
+    width: 100%;
+    outline: none;
+    padding: 10px 30px;
+    border: 1px solid transparent;
+    min-height: 160px;
+    resize: vertical;
+    color: $ContactFormFontColor;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px 0 rgba(69, 69, 96, 0.1);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@mixin for-tablet {
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+@mixin for-mobile {
+    @media(max-width: 600px) {
+        @content;
+    }
+
+}
+
+// for mobile dopisać 600px
+// dorobic button - nowy plik w sass
+// 

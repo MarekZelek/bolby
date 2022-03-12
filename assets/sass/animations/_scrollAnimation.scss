@@ -1,0 +1,17 @@
+@keyframes scroll-animation {
+    0% {
+        top: 15%;
+    }
+
+    15% {
+        top: 50%;
+    }
+
+    50% {
+        top: 50%;
+    }
+
+    100% {
+        top: 15%;
+    }
+}
